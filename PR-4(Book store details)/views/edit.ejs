@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12">
+                <h1 class="text-center mb-4 text-danger">Add User</h1> 
+
+                
+                <form method="post" action="/updateRecord" class="border border-primary p-4 rounded shadow bg-light">
+                    <input type="hidden" name="editid" value="<%= data.id %>">
+
+                    
+                    <div class="mb-3">
+                        <label for="bookname" class="form-label text-primary">Book Name</label>
+                        <input type="text" class="form-control border-primary" id="bookname" name="bookname" value="<%= data.bookname %>" required>
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="bookprice" class="form-label text-primary">Book Price</label> 
+                        <input type="text" class="form-control border-primary" id="bookprice" name="bookprice" value="<%= data.bookprice %>" required>
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="bookpages" class="form-label text-primary">Book Pages</label>
+                        <select class="form-select border-primary" id="bookpages" name="bookpages" required>
+                            <option selected disabled>---Select Pages---</option>
+                            <% 
+                                let pageOptions = ["1 to 100", "101 to 200", "201 to 300", "301 to 400"]; 
+                                pageOptions.forEach((ci) => { %>
+                                    <option value="<%= ci %>" <%= data.bookpages === ci ? "selected" : "" %>><%= ci %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+
+                    
+                    <div class="mb-3">
+                        <label for="bookauthor" class="form-label text-primary">Book Author</label> 
+                        <input type="text" class="form-control border-primary" id="bookauthor" name="bookauthor" value="<%= data.bookauthor %>" required>
+                    </div>
+
+                   
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Submit</button> 
+                    </div>
+                </form>
+
+                
+                <div class="text-center mt-3">
+                    <a href="/" class="btn btn-link text-primary">Go Back</a> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

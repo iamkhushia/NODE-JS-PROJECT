@@ -8,7 +8,7 @@ const db = require('./config/db');
 
 app.set('view engine', 'ejs');
 
-const user = require('./models/UserModel')
+const user = require('./models/UserModel.js')
 
 app.use(express.urlencoded());
 
@@ -73,7 +73,7 @@ app.get('/add', (req, res) => {
     return res.render('add')
 })
 
-const userModel = require('./models/UserModel')
+const userModel = require('./models/UserModel.js')
 
 app.post('/insertRecord', (req, res) => {
     const { bookname, bookprice,bookpages, bookauthor } = req.body;
