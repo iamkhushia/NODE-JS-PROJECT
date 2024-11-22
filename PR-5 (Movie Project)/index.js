@@ -41,8 +41,6 @@ app.get('/' , (req,res) =>{
         return false;
     })
 })
-
-
 app.get('/add' , (req,res) =>{
     return res.render ('add');
 })

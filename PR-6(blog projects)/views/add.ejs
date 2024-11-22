@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <h1>new blog</h1>
+
+  <div>
+    <form action="/addblog" method="post" enctype="multipart/form-data">
+      <div class="mb-3">
+        <input name="title" type="text" class="form-control" placeholder="enter TITLE name here">
+      </div>
+      <div class="mb-3">
+        <textarea name="desc" placeholder="Description"></textarea>
+      </div>
+      <input type="submit" class="btn btn-primary">
+    </form>
+  </div>
+</body>
+
+</html>
