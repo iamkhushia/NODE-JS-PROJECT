@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog</title>
+    <link rel="shortcut icon" href="assets/frontend/img/favicon.png" type="image/x-icon">
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/frontend/css/style.css">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+
+        .edit-blog-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .edit-blog-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .form-control {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group img {
+            display: block;
+            margin: 10px 0;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .btn-primary {
+            background-color: #295684;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #1c3e63;
+        }
+
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="edit-blog-container">
+        <h2>Edit Your Blog</h2>
+        <form action="/up" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="editid" value="<%= single.id %>">
+            <div class="form-group">
+                <label for="title">Blog Title</label>
+                <input type="text" id="title" name="title" class="form-control" value="<%= single.title %>"
+                    placeholder="Enter the blog title">
+            </div>
+            <div class="form-group">
+                <label for="desc">Blog Description</label>
+                <textarea id="desc" name="desc" rows="4" class="form-control" placeholder="Write the blog description">
+                    <%= single.desc %>
+                </textarea>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Blog Image</label>
+                <input type="file" id="image" name="image" class="form-control">
+                <img src="<%= single.image %>" alt="Blog Image" />
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn-primary">Update Blog</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- JS -->
+    <script src="./assets/frontend/js/jquery-1.12.4.min.js"></script>
+    <script src="./assets/frontend/js/bootstrap.min.js"></script>
+</body>
+
+</html>

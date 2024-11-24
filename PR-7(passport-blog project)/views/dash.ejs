@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        /* Global styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 15px 0;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header .navbar-nav .nav-link:hover {
+            color: #00aaff;
+        }
+
+        .hero {
+            background: url('https://via.placeholder.com/1920x500') no-repeat center center/cover;
+            color: #fff;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .blog-card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark container">
+            <a class="navbar-brand" href="#">ModernBlog</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Our Blog</h1>
+        <p>Stay updated with the latest trends and insights</p>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="container py-5">
+        <div class="row">
+            <!-- Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Post Title</h5>
+                        <p class="card-text">A brief summary of the blog post goes here. It should be enticing enough to make readers click...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Post Title</h5>
+                        <p class="card-text">A brief summary of the blog post goes here. It should be enticing enough to make readers click...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Post -->
+            <div class="col-md-4 mb-4">
+                <div class="card blog-card">
+                    <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Blog Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Blog Post Title</h5>
+                        <p class="card-text">A brief summary of the blog post goes here. It should be enticing enough to make readers click...</p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2024 ModernBlog. All rights reserved.</p>
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

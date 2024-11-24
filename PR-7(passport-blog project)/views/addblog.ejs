@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Blog - Business Brokerage</title>
+    <link rel="icon" href="assets/frontend/img/favicon.png" type="image/x-icon">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: "Arial", sans-serif;
+        }
+
+        .header-section {
+            background-color: #295684;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header-section h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .form-container {
+            background: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 600px;
+        }
+
+        .form-container h3 {
+            color: #295684;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            border: 2px solid #295684;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+
+        .form-container textarea {
+            resize: none;
+        }
+
+        .form-container .btn-submit {
+            background-color: #ffc107;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            margin-top: 15px;
+        }
+
+        .form-container .btn-submit:hover {
+            background-color: #e0a800;
+        }
+
+        .view-blog-link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .view-blog-link a {
+            color: #dc3545;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .view-blog-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header-section">
+        <h2>Add Your Blog</h2>
+    </header>
+
+    <!-- Form Section -->
+    <div class="container">
+        <div class="form-container">
+            <h3>Blog Details</h3>
+            <form action="/addblog" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Blog Title</label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Enter blog title" required>
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Blog Description</label>
+                    <textarea id="desc" name="desc" class="form-control" placeholder="Enter blog description" rows="4"
+                        required></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Blog Image</label>
+                    <input type="file" id="image" name="image" class="form-control" accept="image/*" required>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-submit">Add Blog</button>
+                </div>
+            </form>
+            <div class="view-blog-link">
+                <a href="/viewblog">View Blogs</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-3 bg-light">
+        <p>&copy; 2024 Business Brokerage. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

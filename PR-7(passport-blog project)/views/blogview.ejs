@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Blog</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/frontend/img/favicon.png">
+    <!-- Fonts and Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #1a73e8;
+            color: white;
+        }
+
+        header .header-top {
+            padding: 15px 0;
+        }
+
+        header h2 {
+            margin: 0;
+        }
+
+        .header-right-btn .btn {
+            margin-left: 10px;
+            background-color: #ffd600;
+            color: #333;
+            border: none;
+        }
+
+        .header-right-btn .btn:hover {
+            background-color: #ffca28;
+        }
+
+        .hero-cap {
+            margin-top: 30px;
+        }
+
+        .blog_area {
+            padding: 60px 0;
+        }
+
+        .blog_item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .blog_item:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog_item_img img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog_details {
+            padding: 20px;
+        }
+
+        .blog_details h2 {
+            font-size: 1.5rem;
+            color: #1a73e8;
+        }
+
+        .blog_details p {
+            font-size: 0.9rem;
+            color: #555;
+            margin: 15px 0;
+        }
+
+        .blog_details a {
+            color: #1a73e8;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .blog_details a:hover {
+            text-decoration: underline;
+        }
+
+        .blog_details .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            header h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero-cap h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="container d-flex justify-content-between align-items-center">
+                <h2>Blog Section</h2>
+                <div class="header-right-btn">
+                    <a href="addblogpage" class="btn">Add New Blog</a>
+                    <a href="logout" class="btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="slider-area">
+        <div class="single-slider slider-height2 d-flex align-items-center text-center"
+            style="background: linear-gradient(rgba(26, 115, 232, 0.8), rgba(26, 115, 232, 0.8)), url('assets/frontend/img/hero/Industries_hero.jpg') no-repeat center/cover; height: 200px;">
+            <div class="container">
+                <h2 class="hero-cap text-white">Our Blog</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="blog_area">
+        <div class="container">
+            <div class="row g-4">
+                <% users.map((val, index) => { const { title, desc, image } = val %>
+                <div class="col-md-6 col-lg-4">
+                    <div class="blog_item">
+                        <div class="blog_item_img">
+                            <img src="<%= image %>" alt="Blog Image">
+                        </div>
+                        <div class="blog_details">
+                            <h2><%= title %></h2>
+                            <p><%= desc %></p>
+                            <div class="actions">
+                                <a href="/delete?id=<%= val.id %>">Delete</a>
+                                <a href="/edit?id=<%= val.id %>">Edit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+
+    <!-- JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
